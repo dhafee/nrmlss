@@ -1,0 +1,19 @@
+# dependencies
+node_modules
+.pnpm-store
+
+# next
+.next
+out
+
+# env
+.env
+.env.local
+.env.*.local
+
+# drizzle
+drizzle/meta
+
+# os / ide
+.DS_Store
+*.pem

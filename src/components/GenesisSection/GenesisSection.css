@@ -1,0 +1,177 @@
+.genesis-section {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
+.genesis-section .genesis-hero {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 110svh;
+  overflow: hidden;
+}
+
+.genesis-section .genesis-hero .gen-hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.genesis-section .genesis-hero .container {
+  position: relative;
+  color: var(--base-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 7rem 2.125rem;
+}
+
+.genesis-section .genesis-hero .container .gen-hero-copy:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.genesis-section .genesis-hero .container .gen-hero-copy p,
+.genesis-section .genesis-hero .container .gen-hero-copy h1,
+.genesis-section .genesis-hero .container .gen-hero-copy span {
+  color: #ffffff;
+}
+
+.genesis-section .genesis-hero .container .gen-hero-copy:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.genesis-section .genesis-hero .container .gen-hero-copy:nth-child(3) h1 {
+  width: 75%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.genesis-section .genesis-hero .container .gen-hero-copy:nth-child(3) .gen-hero-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.genesis-section .genesis-about {
+  position: relative;
+  z-index: 2;
+  padding: 8rem 0;
+  background-color: #ffffff;
+}
+
+.genesis-section .genesis-about .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.genesis-section .genesis-about .container .genesis-about-copy {
+  width: 60%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.genesis-section .genesis-about .container .genesis-about-copy h4 {
+  margin-bottom: 0;
+  font-family: var(--font-host-grotesk), sans-serif;
+  font-size: clamp(2rem, 4.2vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  text-transform: none;
+  color: var(--base-700);
+}
+
+.genesis-section .genesis-about .container .genesis-about-copy h4 span,
+.genesis-section .genesis-about .container .genesis-about-copy h4 .line {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: none;
+  color: inherit;
+}
+
+.genesis-section .project-preview {
+  position: sticky;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: -100vh;
+  padding: 0;
+  background-color: var(--base-400);
+  overflow: hidden;
+}
+
+.genesis-section .project-preview .project-preview-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 160%;
+  height: 100vh;
+  display: flex;
+  gap: 4em;
+}
+
+.genesis-section .project-preview .project-preview-wrapper .preview-col {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.genesis-section .project-preview .project-preview-wrapper .preview-img {
+  flex: 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.genesis-section
+  .project-preview
+  .project-preview-wrapper
+  .preview-img.main-preview-img
+  img {
+  position: relative;
+  transform: scale(2);
+}
+
+.genesis-section .project-page-whitespace {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 600vh;
+}
+
+.genesis-section .text-block {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1000px) {
+  .genesis-section .genesis-hero .container .gen-hero-copy:nth-child(3) h1,
+  .genesis-section .genesis-about .container .genesis-about-copy {
+    width: 100%;
+  }
+
+  .genesis-section .genesis-hero .container {
+    padding: 7rem 1.5rem;
+  }
+
+  .genesis-section .project-preview .project-preview-wrapper {
+    width: 250%;
+  }
+}
