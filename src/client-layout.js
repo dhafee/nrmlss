@@ -24,49 +24,42 @@ export default function ClientLayout({ children, footer }) {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const scrollSettings = isMobile
-    ? {
-        duration: 0.8,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: "vertical",
-        gestureDirection: "vertical",
-        smooth: true,
-        smoothTouch: true,
-        touchMultiplier: 1.5,
-        infinite: false,
-        lerp: 0.09,
-        wheelMultiplier: 1,
-        orientation: "vertical",
-        smoothWheel: true,
-        syncTouch: true,
-      }
-    : {
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: "vertical",
-        gestureDirection: "vertical",
-        smooth: true,
-        smoothTouch: false,
-        touchMultiplier: 2,
-        infinite: false,
-        lerp: 0.1,
-        wheelMultiplier: 1,
-        orientation: "vertical",
-        smoothWheel: true,
-        syncTouch: true,
-      };
+  const showFooter =
+    pathname !== "/lookbook" &&
+    pathname !== "/app" &&
+    pathname !== "/login" &&
+    pathname !== "/signup" &&
+    pathname !== "/content";
+
+  const page = (
+    <div className="page" ref={pageRef}>
+      {children}
+      {showFooter ? footer : null}
+    </div>
+  );
+
+  // Native scroll on mobile — Lenis smoothTouch causes noticeable lag.
+  if (isMobile) {
+    return page;
+  }
 
   return (
-    <ReactLenis root options={scrollSettings}>
-      <div className="page" ref={pageRef}>
-        {children}
-        {pathname !== "/lookbook" &&
-          pathname !== "/app" &&
-          pathname !== "/login" &&
-          pathname !== "/signup" &&
-          pathname !== "/content" &&
-          footer}
-      </div>
+    <ReactLenis
+      root
+      options={{
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: "vertical",
+        gestureOrientation: "vertical",
+        smoothWheel: true,
+        smoothTouch: false,
+        syncTouch: false,
+        touchMultiplier: 2,
+        wheelMultiplier: 1,
+        lerp: 0.1,
+      }}
+    >
+      {page}
     </ReactLenis>
   );
 }

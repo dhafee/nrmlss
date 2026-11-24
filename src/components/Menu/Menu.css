@@ -202,6 +202,12 @@
     width: calc(100% - 3rem);
   }
 
+  .menu.menu--glass .menu-header,
+  .menu.menu--glass .menu-overlay {
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+  }
+
   .menu .menu-overlay-items {
     flex-direction: column;
     gap: 2rem;
@@ -217,5 +223,20 @@
 
   .menu .menu-product-links {
     display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .menu {
+    top: 1rem;
+    width: calc(100% - 2rem);
+  }
+
+  .menu .menu-header {
+    padding: 0.85rem 1.1rem;
+  }
+
+  .menu .menu-logo {
+    font-size: 1.35rem;
   }
 }
