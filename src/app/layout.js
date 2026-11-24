@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Koulen, DM_Mono, Host_Grotesk } from "next/font/google";
+import { Koulen, DM_Mono, Host_Grotesk, Instrument_Serif } from "next/font/google";
 
 import ClientLayout from "@/client-layout";
 
@@ -27,6 +27,13 @@ const dmMono = DM_Mono({
   variable: "--font-dm-mono",
 });
 
+const instrumentSerif = Instrument_Serif({
+  weight: "400",
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+  variable: "--font-instrument-serif",
+});
+
 export const metadata = {
   title: "NRMLSS",
   description: " ",
@@ -36,7 +43,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${koulen.variable} ${hostGrotesk.variable} ${dmMono.variable}`}
+        className={`${koulen.variable} ${hostGrotesk.variable} ${dmMono.variable} ${instrumentSerif.variable}`}
       >
         <TransitionProvider>
           <ClientLayout footer={<Footer />}>

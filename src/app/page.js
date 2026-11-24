@@ -131,6 +131,7 @@ export default function Index() {
                 </div>
                 <div className="chiron-hero-card">
                   <div className="chiron-product-media">
+                    <p className="chiron-media-caption">Time to pause.</p>
                     <div className="chiron-media-overlay">
                       <div className="chiron-media-stat">
                         <span>Readiness</span>
